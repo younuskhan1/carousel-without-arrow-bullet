@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Carousel without Arrow Bullet</title>
+</head>
+<body onload="slider()">
+
+    <div class="banner">
+        <div class="slider">
+            <img src="./images/image1.jpeg" id="slideImg" alt="">
+        </div>
+        <div class="overlay">
+            <div class="content">
+                <h1>LET'S START TO DESIGN</h1>
+                <h3>Subscribe Easy Tutorials YouTube channel to watch more videos, press the bell icon to get latest updates.</h3>
+                <div>
+                   <button type="button">WATCH MORE</button>
+                   <button type="button" class="btn-2">SUBSCRIBE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+
+    let slideImg = document.getElementById("slideImg");
+    let images = [ "./images/image1.jpeg", "./images/image2.jpeg", "./images/image3.jpeg",
+                   "./images/image4.jpeg", "./images/image5.jpeg" ];
+
+
+    let len = images.length;
+    let i = 0;
+    function slider(){
+
+    // Here len = 5, because array's total element is five and value of i may be 0-4;
+    // i's value may be upto 4. i's value cannot exceed 4. value of len-1 is 5-1 = 4;
+    // the value of len-1 is constant but the value of i is dynamic and i's value is 
+    // increased by 1 for every loop. the value of i must be limited upto 4; 
+    // when the value of i is more than len-1 that means when the value of i is more than 4
+    // then the value of i will be 0. the value of i is more than 4 is not required for this 
+    // project at all 
+
+        if(i > len-1){
+            i = 0;
+        }
+        slideImg.src = images[i];
+        i++;
+        setTimeout("slider()", 3000);
+    }   
+                     
+</script>
+</body>
+</html>
