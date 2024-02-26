@@ -7,29 +7,32 @@
     <title>Carousel without Arrow Bullet</title>
 </head>
 <body onload="slider()">
-
-    <div class="banner">
-        <div class="slider">
-            <img src="./images/image1.jpeg" id="slideImg" alt="">
-        </div>
-        <div class="overlay">
-            <div class="content">
-                <h1>LET'S START TO DESIGN</h1>
-                <h3>Subscribe Easy Tutorials YouTube channel to watch more videos, press the bell icon to get latest updates.</h3>
-                <div>
-                   <button type="button">WATCH MORE</button>
-                   <button type="button" class="btn-2">SUBSCRIBE</button>
+    <div class="slider-parent">
+        <div class="banner">
+            <div class="slider">
+                <img src="./images/image1.jpeg" id="slideImg" alt="">
+            </div>
+            <div class="overlay">
+                <div class="content">
+                    <h1>LET'S START TO DESIGN</h1>
+                    <h3>Subscribe Easy Tutorials YouTube channel to watch more videos, press the bell icon to get latest updates.</h3>
+                    <div>
+                       <button type="button">WATCH MORE</button>
+                       <button type="button" class="btn-2">SUBSCRIBE</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="second-section"></div>
 <script>
-
-    let slideImg = document.getElementById("slideImg");
+     
     let images = [ "./images/image1.jpeg", "./images/image2.jpeg", "./images/image3.jpeg",
                    "./images/image4.jpeg", "./images/image5.jpeg" ];
 
 
+    let slideImg = document.getElementById("slideImg");
+    
     let len = images.length;
     let i = 0;
     function slider(){
@@ -47,7 +50,27 @@
         if(i > len-1){
             i = 0;
         }
+
+        // you can use the below condition to rotate the i value in stead of above condition.
+
+        // if(i === len){
+        //     i = 0;
+        // }
+        
+        // you can use the below condition to rotate the i value in stead of above condition.
+
+        // if(i === images.length){
+        //     i = 0;
+        // }
+        
         slideImg.src = images[i];
+
+        // src's value can be changed with below method in stead of above line.
+
+        // let imgLink = images[i];
+        // slideImg.setAttribute("src", imgLink);
+        
+        
         i++;
         setTimeout("slider()", 3000);
     }   

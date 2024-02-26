@@ -86,4 +86,9 @@ button:hover{
     border: 2px solid #fd7250;
     background: #fd7250;
 }
-
+.second-section{
+    margin-top: 100px;
+    height: 100vh;
+    width: 100%;
+    background-color: red;
+}
